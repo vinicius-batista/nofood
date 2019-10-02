@@ -1,0 +1,43 @@
+page-category {
+  .back-image {
+
+    .scroll-content {
+      background: none !important;
+    }
+  }
+
+  .admin {
+    text-align: right;
+  }
+
+  .category {
+    width: 50%;
+    float: left;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+
+    .image {
+      margin: 0 auto;
+      width: 120px;
+      height: 120px;
+      border: 2px solid #fff;
+      text-align: center;
+      border-radius: 50%;
+      background-size: cover;
+    }
+  }
+
+  .blur {
+    background: url(/assets/imagens/fundo.jpg);
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    filter: blur(3px);
+    top: 0px;
+    left: 0px;
+  }
+}

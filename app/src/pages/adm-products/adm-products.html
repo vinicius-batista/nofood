@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Produtos</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addOrEdit()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list lines>
+    <ion-item text-wrap *ngIf="productsList.length === 0">
+      Nao ha algum produto cadastrado
+    </ion-item>
+    <ion-item
+      *ngFor="let product of productsList"
+      text-wrap
+      (click)="addOrEdit(product)"
+    >
+      {{ product.name }}
+    </ion-item>
+  </ion-list>
+</ion-content>

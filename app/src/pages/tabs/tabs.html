@@ -1,0 +1,18 @@
+<ion-tabs>
+  <ion-tab
+    tabTitle="Categorias"
+    tabIcon="pricetags"
+    [root]="'ProductsPage'"
+    (ionSelect)="goToCategories($event)"
+  ></ion-tab>
+  <ion-tab
+    tabTitle="Meus Pedidos"
+    tabIcon="menu"
+    [root]="'OrdersPage'"
+  ></ion-tab>
+  <ion-tab
+    tabTitle="Minha Conta"
+    tabIcon="contact"
+    [root]="'AccountPage'"
+  ></ion-tab>
+</ion-tabs>

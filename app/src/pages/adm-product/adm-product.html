@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Produto</ion-title>
+    <ion-buttons right>
+      <button ion-button clear (click)="save()">Salvar</button>
+      <button *ngIf="product._id" ion-button icon-only (click)="delete()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input [(ngModel)]="product.name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Preco</ion-label>
+      <ion-input type="tel" [(ngModel)]="product.price" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Categories</ion-label>
+      <ion-select [(ngModel)]="product.categoryId">
+        <ion-option
+          *ngFor="let category of categoriesList"
+          [value]="category._id"
+          >{{ category.title }}</ion-option
+        >
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Descricao</ion-label>
+      <ion-textarea [(ngModel)]="product.description" rows="4"></ion-textarea>
+    </ion-item>
+
+    <ion-item text-center>
+      <button ion-button clear (click)="getPictureOptions()">
+        <ion-icon name="camera" item-left></ion-icon>
+        Selecionar Foto
+      </button>
+    </ion-item>
+    <ion-item *ngIf="product.photo">
+      <img [src]="product.photo" alt="" />
+    </ion-item>
+  </ion-list>
+</ion-content>

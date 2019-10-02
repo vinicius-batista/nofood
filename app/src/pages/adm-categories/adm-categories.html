@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Categorias</ion-title>
+    <ion-buttons right>
+      <button ion-button icon-only (click)="addOrEdit()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+  <ion-list lines>
+    <ion-item text-wrap *ngIf="categoriesList.length === 0">
+      Nao ha alguma categoria cadastrada
+    </ion-item>
+    <ion-item
+      *ngFor="let category of categoriesList"
+      text-wrap
+      (click)="addOrEdit(category)"
+    >
+      {{ category.title }}
+    </ion-item>
+  </ion-list>
+</ion-content>

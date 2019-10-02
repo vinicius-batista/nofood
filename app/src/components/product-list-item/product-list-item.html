@@ -1,0 +1,15 @@
+<div>
+  <div (click)="productDetails()" tappable>
+    <img class="image" [src]="product.photo" />
+    <div class="title">{{ product.name }}</div>
+    <div class="description">{{ product.description }}</div>
+    <div class="price">{{ product.price | real }}</div>
+  </div>
+
+  <div class="quantity">
+    <Quantity
+      (numberChanged)="numberChanged($event)"
+      [productQuantity]="quantity"
+    ></Quantity>
+  </div>
+</div>

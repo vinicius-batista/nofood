@@ -1,0 +1,16 @@
+<ion-content>
+  <div class="top">
+    <div class="title">Minha Conta</div>
+    <img class="image" [src]="loggedUser.photo || ''" (click)="changePhoto()" />
+  </div>
+  <div class="form">
+    <input type="text" placeholder="Nome" [(ngModel)]="loggedUser.name" />
+    <input type="text" placeholder="Email" [(ngModel)]="loggedUser.email" />
+
+    <div class="my-button">
+      <button ion-button outline color="primary" round block (click)="save()">
+        Salvar os dados
+      </button>
+    </div>
+  </div>
+</ion-content>

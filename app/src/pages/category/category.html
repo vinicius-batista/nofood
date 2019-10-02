@@ -1,0 +1,19 @@
+<ion-content padding>
+  <div class="admin">
+    <button ion-button icon-only clear color="light" (click)="adminOptions()">
+      <ion-icon name="settings"></ion-icon>
+    </button>
+  </div>
+
+  <div class="blur"></div>
+  <div
+    class="category"
+    *ngFor="let category of categoriesList"
+    (click)="openProduct(category)"
+  >
+    <img class="image" [src]="category.photo" />
+    <p class="title">
+      {{ category.title }}
+    </p>
+  </div>
+</ion-content>

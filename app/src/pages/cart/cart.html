@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Carrinho de Compras</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content no-padding>
+  <div class="total-value">
+    <h2>{{ cart.totalValue | real }}</h2>
+    <small>seu pedido atual</small>
+  </div>
+  <div class="botao-finalizar">
+    <button class="botao" (click)="saveOrder()">
+      Finalizar Pedido
+    </button>
+  </div>
+  <ProductListItem
+    *ngFor="let item of cart.items"
+    [product]="item.product"
+  ></ProductListItem>
+</ion-content>

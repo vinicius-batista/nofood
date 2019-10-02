@@ -1,0 +1,42 @@
+ProductListItem {
+  width: 80%;
+  background: white;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  border: 1px solid #e2dddd;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+
+  .title {
+    color: red;
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .description {
+    height: 50px;
+  }
+
+  .image {
+    float: left;
+    border: 1px solid #e2dddd;
+    width: 79px;
+    height: 100px;
+    margin-right: 10px;
+    border-radius: 10px;
+  }
+
+  .price {
+    font-size: 2rem;
+    span {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+  }
+
+  .quantity {
+    overflow: auto;
+  }
+}

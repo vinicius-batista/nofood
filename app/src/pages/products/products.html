@@ -1,0 +1,17 @@
+<ion-content no-padding>
+  <div class="top">
+    <div class="title">
+      <p>{{ selectedCategory.title }}</p>
+      <div class="cart" (click)="goToCart()" tappable>
+        <ion-icon name="cart"></ion-icon>
+        <span>{{ cart.items.length }} items</span>
+      </div>
+    </div>
+  </div>
+  <div class="products">
+    <ProductListItem
+      *ngFor="let product of products"
+      [product]="product"
+    ></ProductListItem>
+  </div>
+</ion-content>
