@@ -6,7 +6,7 @@ page-account {
   .top {
     position: fixed;
     width: 100%;
-    background: red;
+    background: map-get($map: $colors, $key: primary);
     height: 200px;
 
     .title {

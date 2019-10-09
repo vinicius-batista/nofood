@@ -63,7 +63,7 @@ export class AccountPage {
     this.userProvider.put(this.loggedUser._id, this.loggedUser).then(result => {
       if (result.success) {
         this.alertProvider.toast('Dados atualizados com sucesso', 'bottom')
-        this.userProvider.updateLoggedUser(result.data)
+        this.userProvider.updateLoggedUser(this.loggedUser)
       }
     })
   }

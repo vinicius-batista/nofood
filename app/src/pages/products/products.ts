@@ -10,6 +10,7 @@ import {
   NavParams,
   ModalController,
 } from 'ionic-angular'
+import { Observable } from 'rxjs/Observable'
 
 @IonicPage()
 @Component({
@@ -19,7 +20,7 @@ import {
 export class ProductsPage {
   selectedCategory: CategoryModel
   products: ProductModel[]
-  cart: CartModel = new CartModel()
+  cart$: Observable<CartModel>
 
   constructor(
     public navCtrl: NavController,
@@ -29,12 +30,10 @@ export class ProductsPage {
     public cartProvider: CartProvider
   ) {
     this.selectedCategory = JSON.parse(localStorage.getItem('nofood.category'))
+    this.cart$ = this.cartProvider.cart$
   }
 
   ionViewDidEnter() {
-    this.cartProvider.cart.subscribe(data => {
-      this.cart = data
-    })
     this.selectedCategory = JSON.parse(localStorage.getItem('nofood.category'))
     this.loadData()
   }

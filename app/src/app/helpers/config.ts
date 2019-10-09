@@ -1,3 +1,3 @@
 export const Config = {
-  api: '/v1/',
+  api: 'http://192.168.0.134:3000/api/',
 }

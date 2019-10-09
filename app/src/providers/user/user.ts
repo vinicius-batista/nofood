@@ -6,10 +6,10 @@ import { ProviderBase } from '../../app/base/providerBase'
 
 @Injectable()
 export class UserProvider extends ProviderBase<UserModel> {
-  url = `${Config.api}/user`
+  url = `${Config.api}user`
 
   constructor(public http: HttpProvider) {
-    super(`${Config.api}/user`, http)
+    super(`${Config.api}user`, http)
   }
 
   authenticate(email: string, password: string) {

@@ -55,6 +55,7 @@ export class HttpProvider {
         return this.http.post(url, model, { headers }).subscribe(
           data => {
             this.spinner.hide()
+            console.log('result ', data)
             return resolve({ success: true, data, errors: null })
           },
           errors => {
@@ -73,6 +74,7 @@ export class HttpProvider {
               this.alert.alert('Informacao', errors.error.message)
             }
 
+            console.log('err ', errors)
             return resolve({ success: false, data: null, errors })
           }
         )

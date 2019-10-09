@@ -18,6 +18,10 @@ export class AdmCategoriesPage {
     this.loadCategories()
   }
 
+  ionViewDidEnter() {
+    this.loadCategories()
+  }
+
   loadCategories() {
     this.categoryProvider.get().then(result => {
       if (result.success) {

@@ -1,14 +1,13 @@
 {
   "name": "app",
-  "app_id": "",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
   },
+  "type": "ionic-angular",
   "proxies": [
     {
       "path": "/v1",
-      "proxyUrl": "http://localhost:3000/api"
+      "proxyUrl": "http://192.168.0.134:3000/api"
     }
   ],
   "yarn": true

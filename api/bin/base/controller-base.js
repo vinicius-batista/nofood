@@ -1,4 +1,7 @@
-const sendResult = (res, status) => result => res.status(status).send(result)
+const sendResult = (res, status) => result => {
+  console.log('resultado', result)
+  res.status(status).send(result)
+}
 
 function get(repository, req, res) {
   repository

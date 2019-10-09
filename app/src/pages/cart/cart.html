@@ -5,7 +5,7 @@
 </ion-header>
 <ion-content no-padding>
   <div class="total-value">
-    <h2>{{ cart.totalValue | real }}</h2>
+    <h2>{{ (cart$ | async).totalValue | real }}</h2>
     <small>seu pedido atual</small>
   </div>
   <div class="botao-finalizar">
@@ -14,7 +14,7 @@
     </button>
   </div>
   <ProductListItem
-    *ngFor="let item of cart.items"
+    *ngFor="let item of (cart$ | async).items"
     [product]="item.product"
   ></ProductListItem>
 </ion-content>

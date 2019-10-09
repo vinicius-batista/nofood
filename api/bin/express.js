@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
+const cors = require('cors')
 
 //routers
 const categoryRouter = require('../routes/category-router')
@@ -10,7 +11,8 @@ const orderRouter = require('../routes/order-router')
 
 const app = express()
 
-app.use(bodyParser.json())
+app.use(cors({ origin: '*' }))
+app.use(bodyParser.json({ limit: '50mb' }))
 app.use(bodyParser.urlencoded({ extended: false }))
 
 mongoose.connect('mongodb://localhost/nofoood', { useNewUrlParser: true })

@@ -4,7 +4,7 @@
       <p>{{ selectedCategory.title }}</p>
       <div class="cart" (click)="goToCart()" tappable>
         <ion-icon name="cart"></ion-icon>
-        <span>{{ cart.items.length }} items</span>
+        <span>{{ (cart$ | async).items.length }} items</span>
       </div>
     </div>
   </div>

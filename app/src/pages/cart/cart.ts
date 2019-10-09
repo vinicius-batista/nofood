@@ -8,6 +8,7 @@ import {
   NavParams,
   ModalController,
 } from 'ionic-angular'
+import { Observable } from 'rxjs/Observable'
 
 @IonicPage()
 @Component({
@@ -15,7 +16,7 @@ import {
   templateUrl: 'cart.html',
 })
 export class CartPage {
-  cart: CartModel
+  cart$: Observable<CartModel>
 
   constructor(
     public navCtrl: NavController,
@@ -24,9 +25,7 @@ export class CartPage {
     public cartProvider: CartProvider,
     public alertProvider: AlertProvider
   ) {
-    this.cartProvider.cart.subscribe(c => {
-      this.cart = c
-    })
+    this.cart$ = this.cartProvider.cart$
   }
 
   saveOrder() {

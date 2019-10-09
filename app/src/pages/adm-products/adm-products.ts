@@ -26,6 +26,10 @@ export class AdmProductsPage {
     this.loadProducts()
   }
 
+  ionViewDidEnter() {
+    this.loadProducts()
+  }
+
   loadProducts() {
     this.productProvider.get().then(result => {
       if (result.success) {

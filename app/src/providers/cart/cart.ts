@@ -10,11 +10,11 @@ import { Observable } from 'rxjs/Observable'
 @Injectable()
 export class CartProvider {
   private _cart: CartModel = new CartModel()
-  cart: Observable<CartModel>
+  cart$: Observable<CartModel>
   cartObservable: any
 
   constructor(public http: HttpProvider, public userProvider: UserProvider) {
-    this.cart = Observable.create(obj => {
+    this.cart$ = Observable.create(obj => {
       this.cartObservable = obj
       this.cartObservable.next(this._cart)
     })
@@ -62,13 +62,13 @@ export class CartProvider {
   saveOrder() {
     this._cart.userId = this.userProvider.getLoggedUser()._id
 
-    return this.http.post(`${Config.api}/order`, this._cart).then(result => {
+    return this.http.post(`${Config.api}order`, this._cart).then(result => {
       this._cart = new CartModel()
       return result
     })
   }
 
   getOrders() {
-    return this.http.get(`${Config.api}/order`)
+    return this.http.get(`${Config.api}order`)
   }
 }
